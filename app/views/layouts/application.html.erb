@@ -1,14 +1,44 @@
 <!DOCTYPE html>
-<html>
-<head>
-  <title>Miniglobo</title>
-  <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
-  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
-  <%= csrf_meta_tags %>
-</head>
-<body>
-
-<%= yield %>
-
-</body>
+<html lang="pt-br">
+  <head>
+    <meta charset="utf-8">
+    <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+    <title>Biscoito Globo.com</title>
+    <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
+    <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+    <%= csrf_meta_tags %>
+  </head>
+  <body class="<%= @body_class %>"><!--begin #header-->
+    <header id="header" role="banner">
+      <div id="header-inner">
+        <div id="logo"><a href="<%= root_path %>">BiscoitoGlobo.com</a></div>
+        <nav id="nav-main">
+          <ul>
+            <li class="nav-esportes"><a href="#">Esportes</a></li>
+            <li class="nav-noticias"><a href="#">Notícias</a></li>
+            <li class="nav-entretenimento"><a href="#">Entretenimento</a></li>
+          </ul>
+        </nav>
+      </div>
+      <!--end #header-inner-->
+    </header>
+    <!--end #header-->
+    <div id="content">
+      <%= yield %>
+    </div>
+    <!--end #content-->
+    <footer id="footer" role="contentinfo">
+      <div id="footer-inner">
+        <div id="footer-logo">
+          <span>Startaê</span>
+        </div>
+        <div id="footer-contact">
+          <p><b>Oficinas Startaê: Aprenda fazendo.</b></p>
+          <p>
+            <a href="aprenda@startae.com.br">aprenda@startae.com.br</a>
+          </p>
+        </div>
+      </div>
+    </footer>
+  </body>
 </html>
