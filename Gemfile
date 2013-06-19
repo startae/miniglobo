@@ -1,7 +1,6 @@
 source 'https://rubygems.org'
 
 gem 'rails',        '4.0.0.rc2'
-gem 'sqlite3',      '~> 1.3.7'
 gem 'jbuilder',     '~> 1.2'
 gem 'kaminari',     '~> 0.14.1'
 gem 'simple_form',  '~> 3.0.0.rc'
@@ -33,4 +32,5 @@ group :development do
   gem 'foreman',           '~> 0.63.0'
   gem 'better_errors',     '~> 0.9.0'
   gem 'binding_of_caller', '~> 0.7.1'
+  gem 'sqlite3',           '~> 1.3.7'
 end
