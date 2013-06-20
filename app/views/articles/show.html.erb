@@ -1,0 +1,108 @@
+<% @body_class = "#{@article.category.name.parameterize}-detalhes #{@article.category.name.parameterize}-detalhes_index area-#{@article.category.name.parameterize} pagina-detalhes" %>
+<header class="titulo-area">
+  <h1><a href="#"><%= @article.category.name %></a></h1>
+</header>
+
+<div id="content-inner">
+  <div id="main">
+    <section class="artigo">
+      <article>
+        <header>
+          <h1><%= @article.title %></h1>
+          <h2><%= @article.summary %></h2>
+        </header>
+
+        <div class="entry-content">
+          <%= image_tag @article.image.large, width: 620, height: 340 %>
+          <%== @article.body %>
+        </div>
+      </article>
+    </section>
+
+    <section id="artigo-comentarios">
+      <header>
+        <h1>Comentários</h1>
+      </header>
+
+      <div class="lista-comentarios">
+        <div class="comentario">
+          <span class="autor">Rafael Torales</span><span class="conteudo">
+            <p>Phasellus quis est sed turpis sollicitudin venenatis sed eu odio. Praesent eget neque eu eros interdum malesuada non vel leo. Sed fringilla porta ligula egestas tincidunt.</p>
+          </span><span class="entry-meta"><span class="entry-date">10 minutes ago</span></span>
+        </div>
+        <div class="comentario">
+          <span class="autor">Renato Carvalho</span><span class="conteudo">
+            <p>Phasellus quis est sed turpis sollicitudin venenatis sed eu odio. Praesent eget neque eu eros interdum malesuada non vel leo. Sed fringilla porta ligula egestas tincidunt.</p>
+          </span><span class="entry-meta"><span class="entry-date">10 minutes ago</span></span>
+        </div>
+        <div class="comentario">
+          <span class="autor">Julio Protzek</span><span class="conteudo">
+            <p>Phasellus quis est sed turpis sollicitudin venenatis sed eu odio. Praesent eget neque eu eros interdum malesuada non vel leo. Sed fringilla porta ligula egestas tincidunt.</p>
+          </span><span class="entry-meta"><span class="entry-date">10 minutes ago</span></span>
+        </div>
+        <div class="comentario">
+          <span class="autor">Flavio Ludgero</span><span class="conteudo">
+            <p>Phasellus quis est sed turpis sollicitudin venenatis sed eu odio. Praesent eget neque eu eros interdum malesuada non vel leo. Sed fringilla porta ligula egestas tincidunt.</p>
+          </span><span class="entry-meta"><span class="entry-date">10 minutes ago</span></span>
+        </div>
+      </div>
+      <!--end .lista-comentarios-->
+
+      <div class="form-comentario">
+        <form action="" method="get">
+          <div class="form-row">
+            <div class="form-label">
+              <label for="field-nome-share">Nome:</label>
+            </div>
+            <div class="form-field">
+              <input id="field-nome-share" type="text">
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-label">
+              <label for="field-email-share">Email:</label>
+            </div>
+            <div class="form-field">
+              <input id="field-email-share" type="email">
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-label">
+              <label for="field-comentario-share">Descreva seu comentário:</label>
+            </div>
+            <div class="form-field">
+              <textarea id="field-comentario-share" rows="6"></textarea>
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-label"></div>
+            <div class="form-field">
+              <button class="small button" type="Submit">Enviar</button>
+            </div>
+          </div>
+        </form>
+      </div>
+      <!--end .form-comentario-->
+    </section>
+    <!--end #artigo-comentarios-->
+  <!--end .artigo-->
+  </div>
+  <div id="sidebar">
+    <section class="ultimas-noticias">
+      <header>
+        <h1>Últimas Notícias</h1>
+      </header>
+      <div class="destaque destaque-terciario"><a href="#">
+        <span class="conteudo">
+          <p>Caso do ‘morto-vivo’ que parou o próprio velório na BA repercute fora do país</p>
+        </span></a></div>
+      <!--end .destaque-terciario-->
+      <div class="destaque destaque-terciario"><a href="/esportes-detalhes">
+        <span class="conteudo">
+          <p>Caso do ‘morto-vivo’ que parou o próprio velório na BA repercute fora do país</p>
+        </span></a></div>
+      <!--end .destaque-terciario-->
+    </section>
+  </div>
+<!--end #sidebar-->
+</div>
