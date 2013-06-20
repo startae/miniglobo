@@ -20,7 +20,7 @@ class Admin::ArticlesController < ApplicationController
     @article = Article.new(admin_article_params)
 
     if @article.save
-      redirect_to @article, notice: 'Article was successfully created.'
+      redirect_to [:admin, @article], notice: 'A notícia foi salva.'
     else
       render action: 'new'
     end
@@ -28,7 +28,7 @@ class Admin::ArticlesController < ApplicationController
 
   def update
     if @article.update(admin_article_params)
-      redirect_to @article, notice: 'Article was successfully updated.'
+      redirect_to [:admin, @article], notice: 'A notícia foi salva.'
     else
       render action: 'edit'
     end
@@ -45,6 +45,6 @@ class Admin::ArticlesController < ApplicationController
     end
 
     def admin_article_params
-      params.require(:admin_article).permit(:title, :image, :body, :published, :featured)
+      params.require(:article).permit(:title, :image, :body, :published, :featured)
     end
 end

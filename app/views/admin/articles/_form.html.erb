@@ -1,4 +1,4 @@
-<%= simple_form_for(@article) do |f| %>
+<%= simple_form_for([:admin, @article]) do |f| %>
   <%= f.error_notification %>
 
   <div class="form-inputs">
@@ -10,6 +10,7 @@
   </div>
 
   <div class="form-actions">
-    <%= f.button :submit %>
+    <%= f.button :submit, 'Salvar', class: 'btn btn-primary' %>
+    <%= link_to 'Cancelar', :back, class: 'btn' %>
   </div>
 <% end %>

@@ -1,29 +1,25 @@
-<p id="notice"><%= notice %></p>
+<% if notice %>
+  <div class="alert">
+    <button type="button" class="close" data-dismiss="alert">&times;</button>
+    <%= notice %>
+  </div>
+<% end %>
 
-<p>
-  <strong>Title:</strong>
-  <%= @article.title %>
-</p>
+<h3><%= @article.title %></h3>
 
-<p>
-  <strong>Image:</strong>
-  <%= @article.image %>
-</p>
+<% if @article.published? %>
+  <span class="label label-info">Publicado</span>
+<% else %>
+  <span class="label">Rascunho</span>
+<% end %>
 
-<p>
-  <strong>Body:</strong>
-  <%= @article.body %>
-</p>
+<% if @article.featured? %>
+  <span class="label label-warning">Destaque</span>
+<% else %>
+  <span class="label">Normal</span>
+<% end %>
 
-<p>
-  <strong>Published:</strong>
-  <%= @article.published %>
-</p>
+<%= simple_format @article.body %>
 
-<p>
-  <strong>Featured:</strong>
-  <%= @article.featured %>
-</p>
+<%= link_to 'Editar', edit_admin_article_path(@article), class: 'btn' %>
 
-<%= link_to 'Edit', edit_admin_article_path(@article) %> |
-<%= link_to 'Back', admin_articles_path %>
