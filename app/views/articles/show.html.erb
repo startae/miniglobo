@@ -87,22 +87,16 @@
     <!--end #artigo-comentarios-->
   <!--end .artigo-->
   </div>
+
   <div id="sidebar">
-    <section class="ultimas-noticias">
-      <header>
-        <h1>Últimas Notícias</h1>
-      </header>
-      <div class="destaque destaque-terciario"><a href="#">
-        <span class="conteudo">
-          <p>Caso do ‘morto-vivo’ que parou o próprio velório na BA repercute fora do país</p>
-        </span></a></div>
-      <!--end .destaque-terciario-->
-      <div class="destaque destaque-terciario"><a href="/esportes-detalhes">
-        <span class="conteudo">
-          <p>Caso do ‘morto-vivo’ que parou o próprio velório na BA repercute fora do país</p>
-        </span></a></div>
-      <!--end .destaque-terciario-->
-    </section>
+    <% if @article.related.any? %>
+      <section class="ultimas-noticias">
+        <header>
+          <h1>Relacionadas</h1>
+        </header>
+        <%= render partial: 'articles/related_article', collection: @article.related, as: :article %>
+      </section>
+    <% end %>
   </div>
 <!--end #sidebar-->
 </div>
