@@ -11,14 +11,23 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130619232101) do
+ActiveRecord::Schema.define(version: 20130620195737) do
 
   create_table "articles", force: true do |t|
     t.string   "title"
     t.string   "image"
     t.text     "body"
-    t.boolean  "published",  default: true
-    t.boolean  "featured",   default: false
+    t.boolean  "published",   default: true
+    t.boolean  "featured",    default: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "category_id"
+  end
+
+  add_index "articles", ["category_id"], name: "index_articles_on_category_id"
+
+  create_table "categories", force: true do |t|
+    t.string   "name"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

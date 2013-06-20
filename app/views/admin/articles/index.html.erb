@@ -4,6 +4,7 @@
   <thead>
     <tr>
       <th>Título</th>
+      <th>Categoria</th>
       <th>Publicado?</th>
       <th>Destaque?</th>
       <th></th>
@@ -14,6 +15,7 @@
     <% @articles.each do |article| %>
       <tr>
         <td><%= article.title %></td>
+        <td><%= article.category.name %></td>
         <td>
           <% if article.published? %>
             <span class="label label-warning">Sim</span>

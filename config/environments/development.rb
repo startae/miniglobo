@@ -7,4 +7,5 @@ Miniglobo::Application.configure do
   config.active_support.deprecation = :log
   config.active_record.migration_error = :page_load
   config.assets.debug = true
+  config.action_controller.action_on_unpermitted_parameters = :raise
 end
