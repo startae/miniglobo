@@ -1,0 +1,14 @@
+<section class="destaques-categoria area-<%= category.name.parameterize %>">
+  <header>
+    <h1><a title="Notícias" href="#"><%= category.name %></a></h1>
+  </header>
+<!--
+  <div class="destaque destaque-secundario"><a href="#">
+    <span class="foto"><img width="300" height="170" src="/assets/destaque-noticia.jpg" /></span><span class="conteudo">
+      <p>Acidente com ônibus deixa 30 feridos no RJ: ‘Ele veio voado’, diz motorista</p>
+    </span></a>
+  </div>
+ -->
+
+ <%= render category.articles %>
+</section>
