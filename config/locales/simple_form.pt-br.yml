@@ -17,6 +17,7 @@ pt-BR:
         name: Nome
       article:
         title: Título
+        summary: Subtítulo
         image: Imagem
         category: Categoria
         body: Texto
