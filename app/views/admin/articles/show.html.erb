@@ -15,6 +15,11 @@
   <span class="label">Normal</span>
 <% end %>
 
+<% if @article.image? %>
+  <hr>
+  <%= image_tag @article.image.regular, width: 300, height: 170 %>
+<% end %>
+
 <hr>
 <%== @article.body %>
 

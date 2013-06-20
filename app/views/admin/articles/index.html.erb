@@ -3,6 +3,7 @@
 <table class="table">
   <thead>
     <tr>
+      <th>Imagem</th>
       <th>Título</th>
       <th>Categoria</th>
       <th>Publicado?</th>
@@ -14,6 +15,7 @@
   <tbody>
     <% @articles.each do |article| %>
       <tr>
+        <td><%= image_tag(article.image.thumb, width: 100, height: 65) if article.image? %></td>
         <td><%= article.title %></td>
         <td><%= article.category.name %></td>
         <td>
