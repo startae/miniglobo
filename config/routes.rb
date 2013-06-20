@@ -1,7 +1,8 @@
 Miniglobo::Application.routes.draw do
-  namespace :admin do
-    resources :categories
-    resources :articles
+  namespace :admin, path_names: {new: 'criar', edit: 'editar'} do
+    get '' => 'articles#index'
+    resources :articles, path: 'noticias'
+    resources :categories, path: 'categorias'
   end
 
   get 'frontend' => 'frontend#index'
