@@ -4,7 +4,7 @@
   <div class="form-inputs">
     <%= f.input :title %>
     <%= f.input :image %>
-    <%= f.input :body %>
+    <%= f.input :body, input_html: { class: 'redactor' } %>
     <%= f.input :published %>
     <%= f.input :featured %>
   </div>

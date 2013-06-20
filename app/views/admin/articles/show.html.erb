@@ -19,7 +19,6 @@
   <span class="label">Normal</span>
 <% end %>
 
-<%= simple_format @article.body %>
+<%== @article.body %>
 
 <%= link_to 'Editar', edit_admin_article_path(@article), class: 'btn' %>
-
