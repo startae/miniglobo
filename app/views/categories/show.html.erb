@@ -3,27 +3,25 @@
 <header class="titulo-area">
   <h1><%= @category.name %></h1>
 </header>
-
 <div id="content-inner">
   <div id="main">
     <section class="listagem-artigos">
- <!--      <div class="destaque destaque-secundario">
-        <a href="#">
+
+      <div class="destaque destaque-secundario">
+        <%= link_to @category.featured_article do %>
           <span class="foto">
-            <img width="300" height="170" src="/assets/destaque-entretenimento.jpg" />
+            <%= image_tag @category.featured_article.image.regular, width: 300, height: 170  %>
           </span>
           <span class="conteudo">
-            <h1>Acidente com ônibus deixa 30 feridos no RJ: ‘Ele veio voado’, diz motorista</h1>
-            <h2>Lorem lipsum dolor sit amet consectue lorem doren lipsum amet</h2>
+            <h1><%= @category.featured_article.title %></h1>
+            <h2><%= @category.featured_article.summary %></h2>
           </span>
-        </a>
-      </div> -->
-      <!--end .destaque-terciario-->
+        <% end %>
+      </div>
+
       <%= render partial: 'articles/category_article', collection: @category.articles, as: :article %>
 
-      <!--end .destaque-terciario-->
     </section>
-    <!--end #destaques-noticias-->
   </div>
   <div id="sidebar">
     <section class="share-noticia">

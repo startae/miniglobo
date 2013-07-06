@@ -1,15 +1,18 @@
 <section class="destaques-categoria area-<%= category.name.parameterize %>">
   <header>
-    <h1><a title="Notícias" href="#"><%= category.name %></a></h1>
+    <h1><%= link_to category.name, category %></h1>
   </header>
 
-<!--
-  <div class="destaque destaque-secundario"><a href="#">
-    <span class="foto"><img width="300" height="170" src="/assets/destaque-noticia.jpg" /></span><span class="conteudo">
-      <p>Acidente com ônibus deixa 30 feridos no RJ: ‘Ele veio voado’, diz motorista</p>
-    </span></a>
+  <div class="destaque destaque-secundario">
+    <%= link_to category.featured_article do %>
+      <span class="foto">
+        <span class="foto"><%= image_tag category.featured_article.image.regular, width: 300, height: 170  %></span>
+      </span>
+      <span class="conteudo">
+        <p><%= category.featured_article.title %></p>
+      </span>
+    <% end %>
   </div>
--->
 
- <%= render category.articles %>
+ <%= render category.articles.common %>
 </section>
