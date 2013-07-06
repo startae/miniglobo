@@ -14,9 +14,9 @@
         <div id="logo"><a href="<%= root_path %>">BiscoitoGlobo.com</a></div>
         <nav id="nav-main">
           <ul>
-            <li class="nav-esportes"><a href="#">Esportes</a></li>
-            <li class="nav-noticias"><a href="#">Notícias</a></li>
-            <li class="nav-entretenimento"><a href="#">Entretenimento</a></li>
+            <% @categories.each do |category| %>
+              <li class="nav-<%= category.name.parameterize %>"><%= link_to category.name, category %></li>
+            <% end %>
           </ul>
         </nav>
       </div>

@@ -6,6 +6,7 @@ Miniglobo::Application.routes.draw do
   end
 
   resources :articles
+  resources :categories
 
   get 'frontend' => 'frontend#index'
   get 'frontend/:template' => 'frontend#show'
