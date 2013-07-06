@@ -1,0 +1,9 @@
+<div class="comentario">
+  <span class="autor"><%= comment.name %></span>
+    <span class="conteudo">
+      <%= simple_format comment.body %>
+    </span>
+    <span class="entry-meta">
+      <span class="entry-date"><%= time_ago_in_words comment.created_at %> atrás</span>
+    </span>
+</div>

@@ -25,66 +25,19 @@
       </header>
 
       <div class="lista-comentarios">
-        <div class="comentario">
-          <span class="autor">Rafael Torales</span><span class="conteudo">
-            <p>Phasellus quis est sed turpis sollicitudin venenatis sed eu odio. Praesent eget neque eu eros interdum malesuada non vel leo. Sed fringilla porta ligula egestas tincidunt.</p>
-          </span><span class="entry-meta"><span class="entry-date">10 minutes ago</span></span>
-        </div>
-        <div class="comentario">
-          <span class="autor">Renato Carvalho</span><span class="conteudo">
-            <p>Phasellus quis est sed turpis sollicitudin venenatis sed eu odio. Praesent eget neque eu eros interdum malesuada non vel leo. Sed fringilla porta ligula egestas tincidunt.</p>
-          </span><span class="entry-meta"><span class="entry-date">10 minutes ago</span></span>
-        </div>
-        <div class="comentario">
-          <span class="autor">Julio Protzek</span><span class="conteudo">
-            <p>Phasellus quis est sed turpis sollicitudin venenatis sed eu odio. Praesent eget neque eu eros interdum malesuada non vel leo. Sed fringilla porta ligula egestas tincidunt.</p>
-          </span><span class="entry-meta"><span class="entry-date">10 minutes ago</span></span>
-        </div>
-        <div class="comentario">
-          <span class="autor">Flavio Ludgero</span><span class="conteudo">
-            <p>Phasellus quis est sed turpis sollicitudin venenatis sed eu odio. Praesent eget neque eu eros interdum malesuada non vel leo. Sed fringilla porta ligula egestas tincidunt.</p>
-          </span><span class="entry-meta"><span class="entry-date">10 minutes ago</span></span>
-        </div>
+        <%= render @article.comments %>
       </div>
-      <!--end .lista-comentarios-->
 
       <div class="form-comentario">
-        <form action="" method="get">
-          <div class="form-row">
-            <div class="form-label">
-              <label for="field-nome-share">Nome:</label>
-            </div>
-            <div class="form-field">
-              <input id="field-nome-share" type="text">
-            </div>
-          </div>
-          <div class="form-row">
-            <div class="form-label">
-              <label for="field-email-share">Email:</label>
-            </div>
-            <div class="form-field">
-              <input id="field-email-share" type="email">
-            </div>
-          </div>
-          <div class="form-row">
-            <div class="form-label">
-              <label for="field-comentario-share">Descreva seu comentário:</label>
-            </div>
-            <div class="form-field">
-              <textarea id="field-comentario-share" rows="6"></textarea>
-            </div>
-          </div>
-          <div class="form-row">
-            <div class="form-label"></div>
-            <div class="form-field">
-              <button class="small button" type="Submit">Enviar</button>
-            </div>
-          </div>
-        </form>
+        <%= simple_form_for @comment do |f| %>
+          <%= f.association :article, as: :hidden %>
+          <%= f.input :name %>
+          <%= f.input :email %>
+          <%= f.input :body, input_html: {rows: 6} %>
+          <%= f.button :submit, 'Enviar', class: 'small button' %>
+        <% end %>
       </div>
-      <!--end .form-comentario-->
     </section>
-    <!--end #artigo-comentarios-->
   <!--end .artigo-->
   </div>
 

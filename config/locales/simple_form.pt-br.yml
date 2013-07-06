@@ -23,3 +23,5 @@ pt-BR:
         body: Texto
         published: Publicado
         featured: Destaque
+      comment:
+        body: Descreva seu comentário

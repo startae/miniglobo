@@ -5,8 +5,9 @@ Miniglobo::Application.routes.draw do
     resources :categories, path: 'categorias'
   end
 
-  resources :articles
-  resources :categories
+  resources :articles, only: [:index, :show]
+  resources :categories, only: [:show]
+  resources :comments, only: [:create, :destroy]
 
   get 'frontend' => 'frontend#index'
   get 'frontend/:template' => 'frontend#show'
