@@ -14,7 +14,7 @@
 
         <div class="entry-content">
           <%= image_tag @article.image.large, width: 620, height: 340 %>
-          <%== @article.body %>
+          <%= simple_format @article.body %>
         </div>
       </article>
     </section>

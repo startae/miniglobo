@@ -3,9 +3,7 @@ class Article < ActiveRecord::Base
   mount_uploader :image, ImageUploader
   validates :title, :summary, :image, :category, presence: true
 
-  def self.common
-    where(featured: false)
-  end
+  default_scope -> { order(created_at: :desc) }
 
   def related
     category.articles.where('articles.id != ?', id).limit(3)

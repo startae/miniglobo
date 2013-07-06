@@ -3,6 +3,10 @@ class Category < ActiveRecord::Base
   validates :name, presence: true
 
   def featured_article
-    articles.where(featured: true).order(created_at: :desc).first
+    articles.where(featured: true).first
+  end
+
+  def common_articles
+    articles.where('articles.id != ?', featured_article.id)
   end
 end
