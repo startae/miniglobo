@@ -13,19 +13,27 @@
       <div class="navbar-inner">
         <div class="container">
           <a class="brand" href="/">MiniGlobo</a>
-          <div class="nav">
-            <ul class="nav">
-              <li class="active"><%= link_to 'Notícias', admin_articles_path %></li>
-              <li><%= link_to 'Categorias', admin_categories_path %></li>
-<!--               <li><a href="#about">Comentários</a></li>
-              <li><a href="#about">Administradores</a></li>
- -->            </ul>
-          </div><!--/.nav-collapse -->
+            <% if current_user %>
+              <ul class="nav">
+                <li class="active"><%= link_to 'Notícias', admin_articles_path %></li>
+                <li><%= link_to 'Categorias', admin_categories_path %></li>
+                <li><%= link_to 'Administradores', admin_users_path %></li>
+              </ul>
+              <ul class="nav pull-right">
+                <li><%= link_to 'Sair', destroy_user_session_path, method: :delete %></li>
+              </ul>
+           <% end %>
         </div>
       </div>
     </div>
 
     <div class="container">
+      <% if alert %>
+        <div class="alert alert-error">
+          <button type="button" class="close" data-dismiss="alert">&times;</button>
+          <%= alert %>
+        </div>
+      <% end %>
       <% if notice %>
         <div class="alert">
           <button type="button" class="close" data-dismiss="alert">&times;</button>

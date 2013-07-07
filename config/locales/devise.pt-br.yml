@@ -21,7 +21,7 @@ pt-BR:
       inactive: 'A sua conta não foi ativada ainda.'
       company:
         not_found_in_database: 'Esse email não foi cadastrado.'
-      admin_user:
+      user:
         not_found_in_database: 'Esse email não foi cadastrado.'
     sessions:
       signed_in: 'Autenticado com sucesso.'

@@ -5,8 +5,22 @@ class ApplicationController < ActionController::Base
 
   before_action :set_categories
 
+  layout :layout_for_admin
+
   private
     def set_categories
       @categories = Category.all
     end
+
+    def layout_for_admin
+      'admin' if devise_controller?
+    end
+
+  before_filter :configure_permitted_parameters, if: :devise_controller?
+
+  protected
+
+  def configure_permitted_parameters
+    devise_parameter_sanitizer.for(:sign_in) { |u| u.permit(:remember_me, :email, :password) }
+  end
 end

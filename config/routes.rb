@@ -1,13 +1,16 @@
 Miniglobo::Application.routes.draw do
+  devise_for :users
+
   namespace :admin, path_names: { new: 'criar', edit: 'editar' } do
     get '' => 'articles#index'
-    resources :articles, path: 'noticias'
+    resources :articles, path: 'artigos'
     resources :categories, path: 'categorias'
+    resources :users, path: 'administradores'
   end
 
-  resources :articles, only: [:index, :show]
-  resources :categories, only: [:show]
-  resources :comments, only: [:create, :destroy]
+  resources :articles, path: 'artigos', only: [:index, :show]
+  resources :categories, path: 'categorias', only: [:show]
+  resources :comments, path: 'comentarios', only: [:create, :destroy]
 
   get 'frontend' => 'frontend#index'
   get 'frontend/:template' => 'frontend#show'

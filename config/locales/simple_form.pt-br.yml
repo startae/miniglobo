@@ -25,3 +25,6 @@ pt-BR:
         featured: Destaque
       comment:
         body: Descreva seu comentário
+      user:
+        remember_me: 'Lembrar'
+        submit: 'Entrar'
