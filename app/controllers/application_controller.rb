@@ -23,4 +23,10 @@ class ApplicationController < ActionController::Base
   def configure_permitted_parameters
     devise_parameter_sanitizer.for(:sign_in) { |u| u.permit(:remember_me, :email, :password) }
   end
+
+  private
+
+  def after_sign_out_path_for(resource_or_scope)
+    admin_path
+  end
 end

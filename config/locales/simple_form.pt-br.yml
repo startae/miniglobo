@@ -28,6 +28,7 @@ pt-BR:
       user:
         remember_me: 'Lembrar'
         submit: 'Entrar'
+        password_confirmation: Confirme a senha
       contact:
         title: Título da notícia
         body: Comentário

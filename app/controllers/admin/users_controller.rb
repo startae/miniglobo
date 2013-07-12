@@ -34,7 +34,15 @@ class Admin::UsersController < ApplicationController
 
   # PATCH/PUT /admin/users/1
   def update
+    if params[:user][:password].blank?
+      params[:user].delete(:password)
+      params[:user].delete(:password_confirmation)
+    end
+
     if @user.update(user_params)
+      if @user == current_user
+        sign_in(@user, bypass: true)
+      end
       redirect_to admin_users_url, notice: 'Administrador salvo.'
     else
       render action: 'edit'
@@ -55,6 +63,6 @@ class Admin::UsersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def user_params
-      params.require(:user).permit(:email, :password)
+      params.require(:user).permit(:email, :password, :password_confirmation)
     end
 end

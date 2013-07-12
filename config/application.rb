@@ -20,5 +20,9 @@ module Miniglobo
       g.view_specs        false
       g.helper_specs      false
     end
+
+    config.to_prepare do
+      Devise::Mailer.layout "email"
+    end
   end
 end
