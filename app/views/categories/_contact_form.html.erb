@@ -1,0 +1,19 @@
+<section class="share-noticia">
+  <% if notice %>
+    <header>
+      <h1>Obrigado</h1>
+    </header>
+    <%= notice %>
+  <% else %>
+    <header>
+      <h1>Envie sua notícia</h1>
+    </header>
+    <%= simple_form_for [@category, @contact] do |f| %>
+      <%= f.input :name %>
+      <%= f.input :email %>
+      <%= f.input :title %>
+      <%= f.input :body, as: :text, input_html: {rows: 6} %>
+      <%= f.button :submit, 'Enviar', class: 'small button' %>
+    <% end %>
+  <% end %>
+</section>

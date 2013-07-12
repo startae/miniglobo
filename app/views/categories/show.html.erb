@@ -3,6 +3,7 @@
 <header class="titulo-area">
   <h1><%= @category.name %></h1>
 </header>
+
 <div id="content-inner">
   <div id="main">
     <section class="listagem-artigos">
@@ -24,50 +25,6 @@
     </section>
   </div>
   <div id="sidebar">
-    <section class="share-noticia">
-      <header>
-        <h1>Envie sua notícia</h1>
-      </header>
-      <form action="" method="get">
-        <div class="form-row">
-          <div class="form-label">
-            <label for="field-nome-share">Nome:</label>
-          </div>
-          <div class="form-field">
-            <input id="field-nome-share" type="text">
-          </div>
-        </div>
-        <div class="form-row">
-          <div class="form-label">
-            <label for="field-email-share">Email:</label>
-          </div>
-          <div class="form-field">
-            <input id="field-email-share" type="email">
-          </div>
-        </div>
-        <div class="form-row">
-          <div class="form-label">
-            <label for="field-titulo-share">Título da notícia:</label>
-          </div>
-          <div class="form-field">
-            <input id="field-titulo-share" type="text">
-          </div>
-        </div>
-        <div class="form-row">
-          <div class="form-label">
-            <label for="field-comentario-share">Descreva seu comentário:</label>
-          </div>
-          <div class="form-field">
-            <textarea id="field-comentario-share" rows="6"></textarea>
-          </div>
-        </div>
-        <div class="form-row">
-          <div class="form-label"></div>
-          <div class="form-field">
-            <button class="small button" type="Submit">Enviar</button>
-          </div>
-        </div>
-      </form>
-    </section>
+    <%= render 'categories/contact_form' %>
   </div>
 </div>

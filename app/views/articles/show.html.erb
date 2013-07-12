@@ -1,6 +1,6 @@
 <% @body_class = "#{@article.category.name.parameterize}-detalhes #{@article.category.name.parameterize}-detalhes_index area-#{@article.category.name.parameterize} pagina-detalhes" %>
 <header class="titulo-area">
-  <h1><a href="#"><%= @article.category.name %></a></h1>
+  <h1><%= link_to @article.category.name, @article.category %></h1>
 </header>
 
 <div id="content-inner">
