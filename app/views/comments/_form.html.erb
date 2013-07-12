@@ -1,0 +1,9 @@
+<div class="form-comentario">
+  <%= simple_form_for @comment do |f| %>
+    <%= f.association :article, as: :hidden %>
+    <%= f.input :name %>
+    <%= f.input :email %>
+    <%= f.input :body, input_html: {rows: 6} %>
+    <%= f.button :submit, 'Enviar', class: 'small button' %>
+  <% end %>
+</div>

@@ -19,37 +19,17 @@
       </article>
     </section>
 
+
     <section id="artigo-comentarios">
       <header>
         <h1>Comentários</h1>
       </header>
-
-      <div class="lista-comentarios">
-        <%= render @article.comments %>
-      </div>
-
-      <div class="form-comentario">
-        <%= simple_form_for @comment do |f| %>
-          <%= f.association :article, as: :hidden %>
-          <%= f.input :name %>
-          <%= f.input :email %>
-          <%= f.input :body, input_html: {rows: 6} %>
-          <%= f.button :submit, 'Enviar', class: 'small button' %>
-        <% end %>
-      </div>
+      <%= render 'comments/comments' %>
+      <%= render 'comments/form' %>
     </section>
-  <!--end .artigo-->
+
   </div>
 
-  <div id="sidebar">
-    <% if @article.related.any? %>
-      <section class="ultimas-noticias">
-        <header>
-          <h1>Relacionadas</h1>
-        </header>
-        <%= render partial: 'articles/related_article', collection: @article.related, as: :article %>
-      </section>
-    <% end %>
-  </div>
-<!--end #sidebar-->
+  <%= render 'articles/related_articles_list' %>
+
 </div>

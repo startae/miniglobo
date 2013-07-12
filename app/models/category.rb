@@ -9,4 +9,8 @@ class Category < ActiveRecord::Base
   def common_articles
     articles.where('articles.id != ?', featured_article.id)
   end
+
+  def to_param
+    "#{id} #{name}".parameterize
+  end
 end

@@ -8,18 +8,18 @@ Miniglobo::Application.routes.draw do
     resources :users, path: 'administradores'
   end
 
-  resources :articles, path: 'artigos', only: [:index, :show]
-  resources :categories, path: 'categorias', only: [:show] do
-    resources :contacts, path: 'contato', only: [:new, :create]
-  end
-  resources :comments, path: 'comentarios', only: [:create, :destroy]
-
   get 'frontend' => 'frontend#index'
   get 'frontend/:template' => 'frontend#show'
 
-  root 'homepage#index'
-
   if Rails.env.development?
     mount MailPreview => 'mail_view'
+  end
+
+  resources :comments, path: 'comentarios', only: [:create, :destroy]
+
+  root 'homepage#index'
+  resources :categories, path: '' do
+    resources :articles, path: '', only: [:index, :show]
+    resources :contacts, path: 'contato', only: [:new, :create]
   end
 end

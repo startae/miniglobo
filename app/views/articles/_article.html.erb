@@ -1,5 +1,5 @@
 <div class="destaque destaque-terciario">
-  <%= link_to article do %>
+  <%= link_to [article.category, article] do %>
     <span class="foto"><%= image_tag article.image.thumb, width: 100, height: 65  %></span>
     <span class="conteudo">
       <p><%= article.title %></p>

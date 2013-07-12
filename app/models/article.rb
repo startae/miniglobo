@@ -10,4 +10,8 @@ class Article < ActiveRecord::Base
   def related
     category.articles.where('articles.id != ?', id).limit(3)
   end
+
+  def to_param
+    "#{id} #{title}".parameterize
+  end
 end

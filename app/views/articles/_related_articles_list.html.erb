@@ -1,0 +1,10 @@
+<div id="sidebar">
+  <% if @article.related.any? %>
+    <section class="ultimas-noticias">
+      <header>
+        <h1>Relacionadas</h1>
+      </header>
+      <%= render partial: 'articles/related_article', collection: @article.related, as: :article %>
+    </section>
+  <% end %>
+</div>

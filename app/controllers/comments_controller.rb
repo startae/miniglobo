@@ -7,7 +7,7 @@ class CommentsController < ApplicationController
     @article = @comment.article
 
     if @comment.save
-      redirect_to @comment.article
+      redirect_to [@article.category, @article]
     else
       render template: 'articles/show'
     end

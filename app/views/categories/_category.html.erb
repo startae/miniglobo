@@ -4,7 +4,7 @@
   </header>
 
   <div class="destaque destaque-secundario">
-    <%= link_to category.featured_article do %>
+    <%= link_to [category, category.featured_article] do %>
       <span class="foto">
         <span class="foto"><%= image_tag category.featured_article.image.regular, width: 300, height: 170  %></span>
       </span>
