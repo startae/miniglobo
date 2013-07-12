@@ -1,6 +1,9 @@
 class Category < ActiveRecord::Base
   has_many :articles, dependent: :destroy
-  validates :name, presence: true
+  validates :name, presence: true, uniqueness: true
+
+  extend FriendlyId
+  friendly_id :name, use: :slugged
 
   def featured_article
     articles.where(featured: true).first
@@ -8,9 +11,5 @@ class Category < ActiveRecord::Base
 
   def common_articles
     articles.where('articles.id != ?', featured_article.id)
-  end
-
-  def to_param
-    "#{id} #{name}".parameterize
   end
 end

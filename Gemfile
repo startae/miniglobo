@@ -5,6 +5,7 @@ gem 'jbuilder',     '~> 1.2'
 gem 'kaminari',     '~> 0.14.1'
 gem 'simple_form',  '~> 3.0.0.rc'
 gem 'devise',       '~> 3.0.0.rc'
+gem 'friendly_id',  github: 'FriendlyId/friendly_id', branch: 'master'
 
 # server
 gem 'unicorn',      '~> 4.6.3'

@@ -1,3 +1,10 @@
+GIT
+  remote: git://github.com/FriendlyId/friendly_id.git
+  revision: a25368945623c14798920e3316117bc5bd359e10
+  branch: master
+  specs:
+    friendly_id (5.0.0.alpha1)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -180,6 +187,7 @@ DEPENDENCIES
   coffee-rails (~> 4.0.0)
   devise (~> 3.0.0.rc)
   foreman (~> 0.63.0)
+  friendly_id!
   hpricot (~> 0.8.6)
   jbuilder (~> 1.2)
   jquery-rails (~> 3.0.2)
