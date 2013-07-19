@@ -6,10 +6,10 @@ class Category < ActiveRecord::Base
   friendly_id :name, use: :slugged
 
   def featured_article
-    articles.where(featured: true).first
+    articles.featured.first
   end
 
   def common_articles
-    articles.where('articles.id != ?', featured_article.id)
+    articles.where.not(id: featured_article.id)
   end
 end

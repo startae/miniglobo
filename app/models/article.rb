@@ -11,7 +11,11 @@ class Article < ActiveRecord::Base
   extend FriendlyId
   friendly_id :title, use: :slugged
 
+  def self.featured
+    where(featured: true)
+  end
+
   def related
-    category.articles.where('articles.id != ?', id).limit(3)
+    category.articles.where.not(id: id).limit(3)
   end
 end
