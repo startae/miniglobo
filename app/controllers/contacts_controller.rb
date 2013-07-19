@@ -1,6 +1,6 @@
 class ContactsController < ApplicationController
   def create
-    @category = Category.find(params[:category_id])
+    @category = Category.friendly.find(params[:category_id])
     @contact = Contact.new(params[:contact])
     @contact.category = @category.name
 
