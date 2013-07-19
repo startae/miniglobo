@@ -38,6 +38,6 @@ group :development do
   gem 'binding_of_caller', '~> 0.7.1'
   gem 'sqlite3',           '~> 1.3.7'
   gem 'meta_request',      '~> 0.2.7'
-  gem 'xray-rails',        '~> 0.1.6'
   gem 'mail_view',         '~> 1.0.3'
+  gem 'xray-rails',        '~> 0.1.6'
 end
